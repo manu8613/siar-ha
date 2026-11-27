@@ -1,0 +1,161 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Cuenta de SiAR",
+        "description": "Necesitas una cuenta de SiAR con el alta en **API SiAR** (al registrarte, o en «Mi SiAR» → «Editar perfil»): {web}. Las credenciales se comprueban con una consulta real antes de seguir.",
+        "data": {
+          "username": "NIF / NIE (usuario de SiAR)",
+          "password": "Contraseña de SiAR"
+        },
+        "data_description": {
+          "username": "El mismo con el que entras en «Mi SiAR».",
+          "password": "Se guarda en la configuración de Home Assistant y solo se envía al servidor del ministerio."
+        }
+      },
+      "reauth_confirm": {
+        "title": "Volver a identificarse",
+        "description": "SiAR ha rechazado las credenciales guardadas. Escribe las actuales ({web}).",
+        "data": {
+          "username": "NIF / NIE (usuario de SiAR)",
+          "password": "Contraseña de SiAR"
+        },
+        "data_description": {
+          "username": "El mismo con el que entras en «Mi SiAR».",
+          "password": "Se guarda en la configuración de Home Assistant y solo se envía al servidor del ministerio."
+        }
+      },
+      "reconfigure": {
+        "title": "Cambiar las credenciales",
+        "description": "Escribe las credenciales actuales de la misma cuenta ({web}).",
+        "data": {
+          "username": "NIF / NIE (usuario de SiAR)",
+          "password": "Contraseña de SiAR"
+        },
+        "data_description": {
+          "username": "El mismo con el que entras en «Mi SiAR».",
+          "password": "Se guarda en la configuración de Home Assistant y solo se envía al servidor del ministerio."
+        }
+      },
+      "stations": {
+        "title": "Elige estaciones",
+        "description": "Credenciales verificadas. Hay {count} estaciones en servicio, ordenadas por distancia a tu casa. Puedes elegir una o varias.",
+        "data": {
+          "stations": "Estaciones"
+        },
+        "data_description": {
+          "stations": "Puedes escribir para buscar por código, nombre o municipio."
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "SiAR no acepta estas credenciales. Revisa el NIF y la contraseña y que tengas el alta en «API SiAR». ({detail})",
+      "cannot_connect": "No se puede conectar con SiAR. Inténtalo más tarde. ({detail})",
+      "rate_limit": "Has superado el límite de consultas de tu cuenta. Espera y vuelve a intentarlo. ({detail})",
+      "unexpected_response": "SiAR ha dado una respuesta que no se entiende. ({detail})",
+      "unknown": "Error inesperado. Mira el registro de Home Assistant.",
+      "no_stations": "Elige al menos una estación.",
+      "station_without_data": "Sin datos de los últimos días en: {detail}. Quítalas, o pulsa Enviar otra vez para añadirlas igualmente."
+    },
+    "abort": {
+      "already_configured": "Esta cuenta ya está configurada. Para añadir estaciones usa «Configurar».",
+      "reauth_successful": "Credenciales verificadas y actualizadas.",
+      "reconfigure_successful": "Credenciales verificadas y actualizadas.",
+      "wrong_account": "Esas credenciales son de otra cuenta."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Estaciones SiAR",
+        "description": "Al quitar una estación se borran sus entidades.",
+        "data": {
+          "stations": "Estaciones",
+          "update_interval": "Consultar cada"
+        },
+        "data_description": {
+          "update_interval": "SiAR publica medias de 30 minutos. Cada consulta gasta parte del límite diario de tu cuenta."
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "SiAR no acepta estas credenciales. Revisa el NIF y la contraseña y que tengas el alta en «API SiAR». ({detail})",
+      "cannot_connect": "No se puede conectar con SiAR. Inténtalo más tarde. ({detail})",
+      "rate_limit": "Has superado el límite de consultas de tu cuenta. Espera y vuelve a intentarlo. ({detail})",
+      "unexpected_response": "SiAR ha dado una respuesta que no se entiende. ({detail})",
+      "unknown": "Error inesperado. Mira el registro de Home Assistant.",
+      "no_stations": "Elige al menos una estación.",
+      "station_without_data": "Sin datos de los últimos días en: {detail}. Quítalas, o pulsa Enviar otra vez para añadirlas igualmente."
+    },
+    "abort": {
+      "invalid_auth": "SiAR no acepta estas credenciales. Revisa el NIF y la contraseña y que tengas el alta en «API SiAR». ({detail})",
+      "cannot_connect": "No se puede conectar con SiAR. Inténtalo más tarde. ({detail})",
+      "rate_limit": "Has superado el límite de consultas de tu cuenta. Espera y vuelve a intentarlo. ({detail})",
+      "unexpected_response": "SiAR ha dado una respuesta que no se entiende. ({detail})"
+    }
+  },
+  "entity": {
+    "sensor": {
+      "temperature": {
+        "name": "Temperatura"
+      },
+      "humidity": {
+        "name": "Humedad"
+      },
+      "wind_speed": {
+        "name": "Velocidad del viento"
+      },
+      "wind_bearing": {
+        "name": "Dirección del viento"
+      },
+      "irradiance": {
+        "name": "Radiación solar"
+      },
+      "precipitation": {
+        "name": "Lluvia última media hora"
+      },
+      "soil_temperature_1": {
+        "name": "Temperatura del suelo 10 cm"
+      },
+      "soil_temperature_2": {
+        "name": "Temperatura del suelo 30 cm"
+      },
+      "rain_today": {
+        "name": "Lluvia hoy"
+      },
+      "last_reading": {
+        "name": "Última medida"
+      },
+      "day_et0": {
+        "name": "ET0 (último día)"
+      },
+      "day_effective_precipitation": {
+        "name": "Lluvia efectiva (último día)"
+      },
+      "day_precipitation": {
+        "name": "Lluvia (último día)"
+      },
+      "day_temperature_max": {
+        "name": "Temperatura máxima (último día)"
+      },
+      "day_temperature_min": {
+        "name": "Temperatura mínima (último día)"
+      },
+      "day_temperature": {
+        "name": "Temperatura media (último día)"
+      },
+      "day_humidity": {
+        "name": "Humedad media (último día)"
+      },
+      "day_wind_speed_max": {
+        "name": "Racha máxima (último día)"
+      },
+      "day_radiation": {
+        "name": "Radiación (último día)"
+      },
+      "requests_today": {
+        "name": "Peticiones de hoy"
+      }
+    }
+  }
+}
