@@ -1,0 +1,15 @@
+{
+  "entity": {
+    "sensor": {
+      "day_et0": {
+        "default": "mdi:water-thermometer"
+      },
+      "day_radiation": {
+        "default": "mdi:sun-wireless"
+      },
+      "requests_today": {
+        "default": "mdi:counter"
+      }
+    }
+  }
+}

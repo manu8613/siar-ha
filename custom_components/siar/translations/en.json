@@ -1,0 +1,161 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "SiAR account",
+        "description": "You need a SiAR account with **API SiAR** access (when signing up, or in Mi SiAR → Edit profile): {web}. Credentials are verified with a real request before going on.",
+        "data": {
+          "username": "NIF / NIE (SiAR user)",
+          "password": "SiAR password"
+        },
+        "data_description": {
+          "username": "The one you use to sign in to Mi SiAR.",
+          "password": "Stored in the Home Assistant configuration and sent only to the ministry's server."
+        }
+      },
+      "reauth_confirm": {
+        "title": "Sign in again",
+        "description": "SiAR refused the stored credentials. Enter the current ones ({web}).",
+        "data": {
+          "username": "NIF / NIE (SiAR user)",
+          "password": "SiAR password"
+        },
+        "data_description": {
+          "username": "The one you use to sign in to Mi SiAR.",
+          "password": "Stored in the Home Assistant configuration and sent only to the ministry's server."
+        }
+      },
+      "reconfigure": {
+        "title": "Change credentials",
+        "description": "Enter the current credentials of the same account ({web}).",
+        "data": {
+          "username": "NIF / NIE (SiAR user)",
+          "password": "SiAR password"
+        },
+        "data_description": {
+          "username": "The one you use to sign in to Mi SiAR.",
+          "password": "Stored in the Home Assistant configuration and sent only to the ministry's server."
+        }
+      },
+      "stations": {
+        "title": "Choose stations",
+        "description": "Credentials verified. {count} stations in service, nearest to your home first. Choose one or several.",
+        "data": {
+          "stations": "Stations"
+        },
+        "data_description": {
+          "stations": "Type to search by code, name or town."
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "SiAR does not accept these credentials. Check the NIF and password and that API SiAR access is enabled. ({detail})",
+      "cannot_connect": "Cannot connect to SiAR. Try again later. ({detail})",
+      "rate_limit": "Your account's request limit is exceeded. Wait and try again. ({detail})",
+      "unexpected_response": "SiAR sent an unexpected answer. ({detail})",
+      "unknown": "Unexpected error. Check the Home Assistant log.",
+      "no_stations": "Choose at least one station.",
+      "station_without_data": "No data in the last days for: {detail}. Remove them, or press Submit again to add them anyway."
+    },
+    "abort": {
+      "already_configured": "This account is already set up. Use Configure to add stations.",
+      "reauth_successful": "Credentials verified and updated.",
+      "reconfigure_successful": "Credentials verified and updated.",
+      "wrong_account": "Those credentials belong to another account."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "SiAR stations",
+        "description": "Removing a station deletes its entities.",
+        "data": {
+          "stations": "Stations",
+          "update_interval": "Update every"
+        },
+        "data_description": {
+          "update_interval": "SiAR publishes 30-minute means. Each update uses part of your account's daily limit."
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "SiAR does not accept these credentials. Check the NIF and password and that API SiAR access is enabled. ({detail})",
+      "cannot_connect": "Cannot connect to SiAR. Try again later. ({detail})",
+      "rate_limit": "Your account's request limit is exceeded. Wait and try again. ({detail})",
+      "unexpected_response": "SiAR sent an unexpected answer. ({detail})",
+      "unknown": "Unexpected error. Check the Home Assistant log.",
+      "no_stations": "Choose at least one station.",
+      "station_without_data": "No data in the last days for: {detail}. Remove them, or press Submit again to add them anyway."
+    },
+    "abort": {
+      "invalid_auth": "SiAR does not accept these credentials. Check the NIF and password and that API SiAR access is enabled. ({detail})",
+      "cannot_connect": "Cannot connect to SiAR. Try again later. ({detail})",
+      "rate_limit": "Your account's request limit is exceeded. Wait and try again. ({detail})",
+      "unexpected_response": "SiAR sent an unexpected answer. ({detail})"
+    }
+  },
+  "entity": {
+    "sensor": {
+      "temperature": {
+        "name": "Temperature"
+      },
+      "humidity": {
+        "name": "Humidity"
+      },
+      "wind_speed": {
+        "name": "Wind speed"
+      },
+      "wind_bearing": {
+        "name": "Wind direction"
+      },
+      "irradiance": {
+        "name": "Solar irradiance"
+      },
+      "precipitation": {
+        "name": "Rain last half hour"
+      },
+      "soil_temperature_1": {
+        "name": "Soil temperature 10 cm"
+      },
+      "soil_temperature_2": {
+        "name": "Soil temperature 30 cm"
+      },
+      "rain_today": {
+        "name": "Rain today"
+      },
+      "last_reading": {
+        "name": "Last reading"
+      },
+      "day_et0": {
+        "name": "ET0 (last day)"
+      },
+      "day_effective_precipitation": {
+        "name": "Effective rain (last day)"
+      },
+      "day_precipitation": {
+        "name": "Rain (last day)"
+      },
+      "day_temperature_max": {
+        "name": "Maximum temperature (last day)"
+      },
+      "day_temperature_min": {
+        "name": "Minimum temperature (last day)"
+      },
+      "day_temperature": {
+        "name": "Mean temperature (last day)"
+      },
+      "day_humidity": {
+        "name": "Mean humidity (last day)"
+      },
+      "day_wind_speed_max": {
+        "name": "Maximum wind gust (last day)"
+      },
+      "day_radiation": {
+        "name": "Radiation (last day)"
+      },
+      "requests_today": {
+        "name": "Requests today"
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "domain": "siar",
+  "name": "SiAR",
+  "categories": ["weather_alerts", "garden_plants"],
+  "codeowners": ["@manu8613"],
+  "config_flow": true,
+  "documentation": "https://github.com/manu8613/siar-ha",
+  "integration_type": "hub",
+  "iot_class": "cloud_polling",
+  "issue_tracker": "https://github.com/manu8613/siar-ha/issues",
+  "requirements": [],
+  "version": "0.1.0"
+}
